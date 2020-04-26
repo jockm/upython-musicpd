@@ -275,8 +275,10 @@ class MPDClient:
         """
         self.host = 'localhost'
         self.pwd = None
-        self.port = os.environ.get('MPD_PORT', '6600')
-        mpd_host_env = os.environ.get('MPD_HOST')
+        
+        self.port = os.getenv('MPD_PORT', '6600')
+        mpd_host_env = os.getenv('MPD_HOST')
+            
         if mpd_host_env:
             # If password is set:
             # mpd_host_env = ['pass', 'host'] because MPD_HOST=pass@host
@@ -287,7 +289,7 @@ class MPDClient:
                 self.pwd = mpd_host_env[1]
         else:
             # Is socket there
-            xdg_runtime_dir = os.environ.get('XDG_RUNTIME_DIR', '/run')
+            xdg_runtime_dir = os.getenv('XDG_RUNTIME_DIR', '/run')
             rundir = os.path.join(xdg_runtime_dir, 'mpd/socket')
             if os.path.exists(rundir):
                 self.host = rundir
