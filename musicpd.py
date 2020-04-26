@@ -374,7 +374,9 @@ class MPDClient:
 
     def _write_line(self, line):
         self._wfile.write("%s\n" % line)
-        self._wfile.flush()
+
+	if not isMicroPython:
+            self._wfile.flush()
 
     def _write_command(self, command, args=None):
         if args is None:
