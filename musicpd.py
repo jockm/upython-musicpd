@@ -22,6 +22,12 @@
 import socket
 import os
 
+try:
+    import uos
+    os.getenv = uos.getenv
+except ImportError:
+    pass
+
 from functools import wraps
 
 
@@ -275,10 +281,8 @@ class MPDClient:
         """
         self.host = 'localhost'
         self.pwd = None
-        
         self.port = os.getenv('MPD_PORT', '6600')
         mpd_host_env = os.getenv('MPD_HOST')
-            
         if mpd_host_env:
             # If password is set:
             # mpd_host_env = ['pass', 'host'] because MPD_HOST=pass@host
