@@ -26,9 +26,10 @@ try:
     import uos
     import os.path
     os.getenv = uos.getenv
+    isMicroPython = True
 except ImportError:
-    pass
-
+    isMicroPython = False
+    
 from functools import wraps
 
 
@@ -564,9 +565,16 @@ class MPDClient:
         except AttributeError:
             flags = 0
         err = None
-        for res in socket.getaddrinfo(host, port, socket.AF_UNSPEC,
+        
+        if isMicroPython:
+            adderinfo = socket.getaddrinfo(host, port)
+        else:
+            adderinfo = socket.getaddrinfo(host, port, socket.AF_UNSPEC,
                                       socket.SOCK_STREAM, socket.IPPROTO_TCP,
-                                      flags):
+                                      flags)
+            
+        #TODO AF_UNSPEC
+        for res in adderinfo:
             af, socktype, proto, _, sa = res
             sock = None
             try:
