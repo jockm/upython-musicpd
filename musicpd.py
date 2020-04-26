@@ -24,10 +24,8 @@ import os
 
 try:
     import uos
+    import os.path
     os.getenv = uos.getenv
-    
-    os.path =  type('', (), {})()
-    os.path.join = lambda a, b: a + '/' + b
 except ImportError:
     pass
 
