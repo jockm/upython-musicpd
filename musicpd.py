@@ -630,8 +630,14 @@ class MPDClient:
             self._sock = self._connect_unix(host)
         else:
             self._sock = self._connect_tcp(host, port)
-        self._rfile = self._sock.makefile("r", encoding='utf-8', errors='surrogateescape')
-        self._wfile = self._sock.makefile("w", encoding='utf-8')
+        
+        if isMicroPython:
+            self._rfile = self._sock.makefile("r")
+            self._wfile = self._sock.makefile("w")
+        else:
+            self._rfile = self._sock.makefile("r", encoding='utf-8', errors='c')
+            self._wfile = self._sock.makefile("w", encoding='utf-8')
+            
         try:
             self._hello()
         except:
