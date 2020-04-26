@@ -12,6 +12,11 @@ Installation
 
 Micropython 1.9+
 ----------------
+
+Add required upip modules:
+- micropython -m upip install os.path
+- micropython -m upip install functools
+
 git clone git+https://github.com/jockm/upython-musicpd
 
 Manually add to project
