@@ -14,6 +14,7 @@ Micropython 1.9+
 ----------------
 
 Add required upip modules:
+- micropython -m upip install os
 - micropython -m upip install os.path
 - micropython -m upip install functools
 
