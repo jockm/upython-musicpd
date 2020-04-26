@@ -175,7 +175,7 @@ Status Commands
 +-----------------+-----------------------+------------------+
 | Command         | Arguments             | Returns          |
 +=================+=======================+==================+
-|clearerror       | (none)                |  fetch_nothing   |
+|clearerror       | (none)                |  (nothing)       |
 +-----------------+-----------------------+------------------+
 |currentsong      | (none)                |  fetch_object    |
 +-----------------+-----------------------+------------------+
@@ -193,27 +193,27 @@ Playback Option Commands
 +------------------+-----------------------+------------------+
 | Command          | Arguments             | Returns          |
 +==================+=======================+==================+
-|consume           | bool                  |  fetch_nothing   |
+|consume           | bool                  |  (nothing)       |
 +------------------+-----------------------+------------------+
-|crossfade         | int                   |  fetch_nothing   |
+|crossfade         | int                   |  (nothing)       |
 +------------------+-----------------------+------------------+
-|mixrampdb         | str                   |  fetch_nothing   |
+|mixrampdb         | str                   |  (nothing)       |
 +------------------+-----------------------+------------------+
-|mixrampdelay      | int                   |  fetch_nothing   |
+|mixrampdelay      | int                   |  (nothing)       |
 +------------------+-----------------------+------------------+
-|random            | bool                  |  fetch_nothing   |
+|random            | bool                  |  (nothing)       |
 +------------------+-----------------------+------------------+
-|repeat            | bool                  |  fetch_nothing   |
+|repeat            | bool                  |  (nothing)       |
 +------------------+-----------------------+------------------+
-|setvol            | int                   |  fetch_nothing   |
+|setvol            | int                   |  (nothing)       |
 +------------------+-----------------------+------------------+
-|single            | bool                  |  fetch_nothing   |
+|single            | bool                  |  (nothing)       |
 +------------------+-----------------------+------------------+
-|replay_gain_mode  | str                   |  fetch_nothing   |
+|replay_gain_mode  | str                   |  (nothing)       |
 +------------------+-----------------------+------------------+
 |replay_gain_status| (none)                |  fetch_item      |
 +------------------+-----------------------+------------------+
-|volume            |int                    |  fetch_nothing   |
+|volume            |int                    |  (nothing)       |
 +------------------+-----------------------+------------------+
 
 
@@ -222,23 +222,23 @@ Playback Control Commands
 +-----------------+--------------------+------------------+
 | Command         | Arguments          | Returns          |
 +=================+====================+==================+
-|next             | (none)             | fetch_nothing    |
+|next             | (none)             | (nothing)        |
 +-----------------+--------------------+------------------+
-|pause            | bool               | fetch_nothing    |
+|pause            | bool               | (nothing)        |
 +-----------------+--------------------+------------------+
-|play             | int                | fetch_nothing    |
+|play             | int                | (nothing)        |
 +-----------------+--------------------+------------------+
-|playid           | int                | fetch_nothing    |
+|playid           | int                | (nothing)        |
 +-----------------+--------------------+------------------+
-|previous         | (none)             | fetch_nothing    |
+|previous         | (none)             | (nothing)        |
 +-----------------+--------------------+------------------+
-|seek             | int int            | fetch_nothing    |
+|seek             | int int            | (nothing)        |
 +-----------------+--------------------+------------------+
-|seekid           | int int            | fetch_nothing    |
+|seekid           | int int            | (nothing)        |
 +-----------------+--------------------+------------------+
-|seekcur          | int                | fetch_nothing    |
+|seekcur          | int                | (nothing)        |
 +-----------------+--------------------+------------------+
-|stop             | (none)             | fetch_nothing    |
+|stop             | (none)             | (nothing)        |
 +-----------------+--------------------+------------------+
 
 Queue Commands
@@ -246,19 +246,19 @@ Queue Commands
 +-----------------+--------------------+------------------+
 | Command         | Arguments          | Returns          |
 +=================+====================+==================+
-|add              | str                | fetch_nothing    |
+|add              | str                | (nothing)        |
 +-----------------+--------------------+------------------+
 |addid            | str int (Opt)      | fetch_item       |
 +-----------------+--------------------+------------------+
-|clear            | (none)             | fetch_nothing    |
+|clear            | (none)             | (nothing)        |
 +-----------------+--------------------+------------------+
-|delete           | int|range          | fetch_nothing    |
+|delete           | int|range          | (nothing)        |
 +-----------------+--------------------+------------------+
-|deleteid         | int                | fetch_nothing    |
+|deleteid         | int                | (nothing)        |
 +-----------------+--------------------+------------------+
-|move             | int|range int      | fetch_nothing    |
+|move             | int|range int      | (nothing)        |
 +-----------------+--------------------+------------------+
-|moveid           | int int            | fetch_nothing    |
+|moveid           | int int            | (nothing)        |
 +-----------------+--------------------+------------------+
 |playlist         | (none)             | fetch_playlist   |
 +-----------------+--------------------+------------------+
@@ -274,21 +274,21 @@ Queue Commands
 +-----------------+--------------------+------------------+
 |plchangesposid   | int                | fetch_changes    |
 +-----------------+--------------------+------------------+
-|prio             | int int|range      | fetch_nothing    |
+|prio             | int int|range      | (nothing)        |
 +-----------------+--------------------+------------------+
-|prioid           | int int            | fetch_nothing    |
+|prioid           | int int            | (nothing)        |
 +-----------------+--------------------+------------------+
-|rangeid          | int range          | fetch_nothing    |
+|rangeid          | int range          | (nothing)        |
 +-----------------+--------------------+------------------+
-|shuffle          | range (Opt)        | fetch_nothing    |
+|shuffle          | range (Opt)        | (nothing)        |
 +-----------------+--------------------+------------------+
-|swap             | int int            | fetch_nothing    |
+|swap             | int int            | (nothing)        |
 +-----------------+--------------------+------------------+
-|swapid           | int int            | fetch_nothing    |
+|swapid           | int int            | (nothing)        |
 +-----------------+--------------------+------------------+
-|addtagid         | int str str        | fetch_nothing    |
+|addtagid         | int str str        | (nothing)        |
 +-----------------+--------------------+------------------+
-|cleartagid       | int str (Opt)      | fetch_nothing    |
+|cleartagid       | int str (Opt)      | (nothing)        |
 +-----------------+--------------------+------------------+
 
 Stored Playlist Commands
@@ -302,21 +302,21 @@ Stored Playlist Commands
 +-----------------+--------------------+------------------+
 |listplaylists    | (none)             | fetch_playlists  |
 +-----------------+--------------------+------------------+
-|load             | str range (Opt)    | fetch_nothing    |
+|load             | str range (Opt)    | (nothing)        |
 +-----------------+--------------------+------------------+
-|playlistadd      | str str            | fetch_nothing    |
+|playlistadd      | str str            | (nothing)        |
 +-----------------+--------------------+------------------+
-|playlistclear    | str                | fetch_nothing    |
+|playlistclear    | str                | (nothing)        |
 +-----------------+--------------------+------------------+
-|playlistdelete   | str int            | fetch_nothing    |
+|playlistdelete   | str int            | (nothing)        |
 +-----------------+--------------------+------------------+
-|playlistmove     | str int int        | fetch_nothing    |
+|playlistmove     | str int int        | (nothing)        |
 +-----------------+--------------------+------------------+
-|rename           | str str            | fetch_nothing    |
+|rename           | str str            | (nothing)        |
 +-----------------+--------------------+------------------+
-|rm               | str                | fetch_nothing    |
+|rm               | str                | (nothing)        |
 +-----------------+--------------------+------------------+
-|save             | str                | fetch_nothing    |
+|save             | str                | (nothing)        |
 +-----------------+--------------------+------------------+
 
 Database Commands
@@ -332,7 +332,7 @@ Database Commands
 +-----------------+----------------------------------------+----------------+
 |find             | str str str str (Opt)...               | fetch_songs    |
 +-----------------+----------------------------------------+----------------+
-|findadd          | str str str str (Opt)                  | fetch_nothing  |
+|findadd          | str str str str (Opt)                  | (nothing)      |
 +-----------------+----------------------------------------+----------------+
 |list             | str str str (Opt)...group str (Opt)... | fetch_list     |
 +-----------------+----------------------------------------+----------------+
@@ -348,9 +348,9 @@ Database Commands
 +-----------------+----------------------------------------+----------------+
 |search           | str str str str (Opt)...               | fetch_song     |
 +-----------------+----------------------------------------+----------------+
-|searchadd        | str str str str (Opt)...               | fetch_nothing  |
+|searchadd        | str str str str (Opt)...               | (nothing)      |
 +-----------------+----------------------------------------+----------------+
-|searchaddpl      | str str str str str (Opt)...           | fetch_nothing  |
+|searchaddpl      | str str str str str (Opt)...           | (nothing)      |
 +-----------------+----------------------------------------+----------------+
 |update           | str (Opt)                              | fetch_item     |
 +-----------------+----------------------------------------+----------------+
@@ -362,9 +362,9 @@ Mounts and neighbors
 +-----------------+--------------------+------------------+
 | Command         | Arguments          | Returns          |
 +=================+====================+==================+
-|mount            | str str            | fetch_nothing    |
+|mount            | str str            | (nothing)        |
 +-----------------+--------------------+------------------+
-|unmount          | str                | fetch_nothing    |
+|unmount          | str                | (nothing)        |
 +-----------------+--------------------+------------------+
 |listmounts       | (none)             | fetch_mounts     |
 +-----------------+--------------------+------------------+
@@ -378,9 +378,9 @@ Sticker Commands
 +=================+====================+==================+
 |sticker   get    | str str str        | fetch_item       |
 +-----------------+--------------------+------------------+
-|sticker   set    | str str str str    | fetch_nothing    |
+|sticker   set    | str str str str    | (nothing)        |
 +-----------------+--------------------+------------------+
-|sticker   delete | str str str (Opt)  | fetch_nothing    |
+|sticker   delete | str str str (Opt)  | (nothing)        |
 +-----------------+--------------------+------------------+
 |sticker   list   | str str            | fetch_list       |
 +-----------------+--------------------+------------------+
@@ -396,19 +396,19 @@ Connection Commands
 +------------------+--------------------+------------------+
 |kill              | (none)             | None             |
 +------------------+--------------------+------------------+
-|password          |  str               | fetch_nothing    |
+|password          |  str               | (nothing)        |
 +------------------+--------------------+------------------+
-|ping              | (none)             | fetch_nothing    |
+|ping              | (none)             | (nothing)        |
 +------------------+--------------------+------------------+
 |tagtypes          | (none)             | fetch_list       |
 +------------------+--------------------+------------------+
-|tagtypes disable: | str str (Opt)...   | fetch_nothing    |
+|tagtypes disable: | str str (Opt)...   | (nothing)        |
 +------------------+--------------------+------------------+
-|tagtypes enable:  | str str (Opt)...   | fetch_nothing    |
+|tagtypes enable:  | str str (Opt)...   | (nothing)        |
 +------------------+--------------------+------------------+
-|tagtypes clear:   | (none)             | fetch_nothing    |
+|tagtypes clear:   | (none)             | (nothing)        |
 +------------------+--------------------+------------------+
-|tagtypes all:     | (none)             | fetch_nothing    |
+|tagtypes all:     | (none)             | (nothing)        |
 +------------------+--------------------+------------------+
 
 Partition Commands
@@ -416,11 +416,11 @@ Partition Commands
 +------------------+--------------------+------------------+
 | Command          | Arguments          | Returns          |
 +==================+====================+==================+
-|partition         | str                | fetch_nothing    |
+|partition         | str                | (nothing)        |
 +------------------+--------------------+------------------+
 |listpartitions    | (none)             | fetch_list       |
 +------------------+--------------------+------------------+
-|newpartition      | str                | fetch_nothing    |
+|newpartition      | str                | (nothing)        |
 +------------------+--------------------+------------------+
                                                            
 Audio Output Commands
@@ -428,15 +428,15 @@ Audio Output Commands
 +------------------+--------------------+------------------+
 | Command          | Arguments          | Returns          |
 +==================+====================+==================+
-|disableoutput     | int                | fetch_nothing    |
+|disableoutput     | int                | (nothing)        |
 +------------------+--------------------+------------------+
-|enableoutput      | int                | fetch_nothing    |
+|enableoutput      | int                | (nothing)        |
 +------------------+--------------------+------------------+
-|toggleoutput      | int                | fetch_nothing    |
+|toggleoutput      | int                | (nothing)        |
 +------------------+--------------------+------------------+
 |outputs           | (none)             | fetch_outputs    |
 +------------------+--------------------+------------------+
-|outputset         | str str str        | fetch_nothing    |
+|outputset         | str str str        | (nothing)        |
 +------------------+--------------------+------------------+
 
 Reflection Commands
@@ -463,4 +463,3 @@ Reflection Commands
 :Dependencies:  None
 :Compatibility: Micropython 1.9+ / Python 3.4+
 :Licence:       GNU LGPLv3
-
